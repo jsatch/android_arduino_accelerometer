@@ -24,6 +24,10 @@ import ulima.edu.pe.appsensor.model.XYZData;
 import ulima.edu.pe.appsensor.utils.SensorUtils;
 
 public class GraphActivity extends AppCompatActivity {
+    // En esta pantalla debemos hacer 3 cosas:
+    // 1. Configurar los elementos de la pantalla.
+    // 2. Iniciar la recepción del handset de la trama que envía el arduino mediante Bluetooth
+    // 3. Procesar la trama y mostrarla en los gráficos.
 
     private ProgressDialog pd;
     BluetoothAdapter mBluetoothAdapter = null;
@@ -41,16 +45,18 @@ public class GraphActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        configurarElementosPantalla();
 
-        iniciarRecepcionDeBluetooth();
+
+
     }
 
     private void iniciarRecepcionDeBluetooth() {
         new BTConnection(new OnDeviceDataListener() {
             @Override
             public void onDataObtained(byte[] trama) {
-                procesarDataObtenida(trama);
+
+
+
             }
         }).execute();
     }
