@@ -25,8 +25,6 @@ import ulima.edu.pe.appsensor.utils.SensorUtils;
 
 public class GraphActivity extends AppCompatActivity {
 
-    //private static final
-
     private ProgressDialog pd;
     BluetoothAdapter mBluetoothAdapter = null;
     BluetoothSocket mBtSocket = null;
