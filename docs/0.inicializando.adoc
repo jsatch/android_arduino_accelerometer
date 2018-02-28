@@ -22,15 +22,15 @@ Para abrir el IDE Android Studio, simplemente se hare click en el ícono verde
 que se encuentra en el escritorio de la computadora lo que mostrará la siguiente
 pantalla:
 
-image:recursos/t1_imagen1.png[]
+image:imagenes/t1_imagen1.png[]
 
 Debe seleccionar la siguiente opción y llenar los datos con lo siguiente:
 
-image:recursos/t1_imagen2.png[]
+image:imagenes/t1_imagen2.png[]
 
 Si todo estuvo correcto, deberá cargarse una pantalla como la que se les muestra.
 
-image:recursos/t1_imagen3.png[]
+image:imagenes/t1_imagen3.png[]
 
 == Ejecutar aplicación MedidorULima
 
@@ -67,5 +67,5 @@ taller.
 Para iniciar la aplicación, debe de salirles las siguientes
 pantallas:
 
-image:recursos/t1_imagen4.png[]
-image:recursos/t1_imagen5.png[]
+image:imagenes/t1_imagen4.png[]
+image:imagenes/t1_imagen5.png[]

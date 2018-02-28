@@ -64,4 +64,4 @@ Studio los datos que se están obtenido en el censor.
 También se deberá ver que el handset comenzará a mostrar las
 gráficas de los datos.
 
-image:recursos/t3_imagen1.png[]
+image:imagenes/t3_imagen1.png[]

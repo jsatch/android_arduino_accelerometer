@@ -13,7 +13,7 @@ función _onCreate_ deberá de agregar el siguiente código:
 configurarElementosPantalla();
 ----
 
-image:recursos/t2_imagen1.png[]
+image:imagenes/t2_imagen1.png[]
 
 === 2. Verificar que el handset tenga un receptor Bluetooth
 
@@ -50,7 +50,7 @@ mostrarDispositivosPareados();
 Al ejecutar nuestra aplicación y al hacer click en el botón Buscar, veremos que se
 listarán los distintos dispositivos pareados con el handset.
 
-image:recursos/t2_imagen2.png[]
+image:imagenes/t2_imagen2.png[]
 
 === 4. Seleccionar un dispositivo pareado para obtener sus datos
 
