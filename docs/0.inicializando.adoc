@@ -24,13 +24,21 @@ pantalla:
 
 image:imagenes/t1_imagen1.png[]
 
-Debe seleccionar la siguiente opción y llenar los datos con lo siguiente:
+Debe seleccionar "Open an existing Android Studio Project" y elegir el programa
+que se debe encontrar en su computadora. La dirección exacta le será proporcionada
+por el profesor encargado del taller.
+
+Luego de seleccionar el programa a cargar, deberá salir la siguiente pantalla:
 
 image:imagenes/t1_imagen2.png[]
 
-Si todo estuvo correcto, deberá cargarse una pantalla como la que se les muestra.
+Para ver si el Android Studio puede ver el handset, se debe hacer click en el play
+(parte superior) y ver lo siguiente:
 
 image:imagenes/t1_imagen3.png[]
+
+En caso de mostrar dispositivos conectados, Android Studio ha sido configurado de la
+manera correcta.
 
 == Ejecutar aplicación MedidorULima
 
