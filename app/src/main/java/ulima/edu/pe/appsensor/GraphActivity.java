@@ -45,7 +45,8 @@ public class GraphActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
+        configurarElementosPantalla();
+        iniciarRecepcionDeBluetooth();
 
 
     }
@@ -54,9 +55,7 @@ public class GraphActivity extends AppCompatActivity {
         new BTConnection(new OnDeviceDataListener() {
             @Override
             public void onDataObtained(byte[] trama) {
-
-
-
+                procesarDataObtenida(trama);
             }
         }).execute();
     }
@@ -71,11 +70,11 @@ public class GraphActivity extends AppCompatActivity {
         XYZData dataxyz = SensorUtils.parseData(data, mInitTimestamp);
 
         mSeriesX.appendData(new DataPoint(dataxyz.getTimestamp(),
-                dataxyz.getX() + 7), false, 1000);
+                dataxyz.getX() ), false, 1000);
         mSeriesY.appendData(new DataPoint(dataxyz.getTimestamp(),
-                dataxyz.getY()+ 7), false, 1000);
+                dataxyz.getY()), false, 1000);
         mSeriesZ.appendData(new DataPoint(dataxyz.getTimestamp(),
-                dataxyz.getZ() - 84), false, 1000);
+                dataxyz.getZ() - 87), false, 1000);
         Log.i("data", dataxyz.getX() + "," + dataxyz.getY() + "," + dataxyz.getZ());
     }
 

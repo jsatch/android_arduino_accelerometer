@@ -37,7 +37,8 @@ public class DeviceListActivity extends AppCompatActivity implements View.OnClic
 
         // Acá se deben configurar los elementos de la pantalla
         // así como ver que el handset tenga activo el Bluetooth.
-
+        configurarElementosPantalla();
+        verificarHandsetTengaBluetooth();
 
     }
 
@@ -45,6 +46,7 @@ public class DeviceListActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View view) {
         // Cada vez que se haga click, se deberá de mostrar los dispositivos que se
         // encuentran pareados con el celular.
+        mostrarDispositivosPareados();
 
     }
 
@@ -53,7 +55,7 @@ public class DeviceListActivity extends AppCompatActivity implements View.OnClic
         // Al seleccionar un dispositivo Bluetooth con el cual conectarnos,
         // debemos ir a la pantalla donde vamos a obtener los datos y mostrarlos
         // en gráficos para ver la vibración.
-
+        irAPantallaGraficosDelSensor(adapterView, i);
 
     }
 
