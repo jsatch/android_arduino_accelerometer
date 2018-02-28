@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AppSensores.iml" filepath="$PROJECT_DIR$/AppSensores.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android_arduino_accelerometer.iml" filepath="$PROJECT_DIR$/android_arduino_accelerometer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

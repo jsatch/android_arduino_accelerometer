@@ -35,29 +35,57 @@ public class DeviceListActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        configurarElementosPantalla();
+
+        verificarHandsetTengaBluetooth();
+
+    }
+
+    @Override
+    public void onClick(View view) {
+        // Cada vez que se haga click, se deberá de mostrar los dispositivos que se
+        // encuentran pareados con el celular.
+        mostrarDispositivosPareados();
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        // Al seleccionar un dispositivo Bluetooth con el cual conectarnos,
+        // debemos ir a la pantalla donde vamos a obtener los datos y mostrarlos
+        // en gráficos para ver la vibración.
+        irAPantallaGraficosDelSensor(adapterView, i);
+
+    }
+
+    // ===========================================================================================//
+
+
+
+
+    private void configurarElementosPantalla() {
         setContentView(R.layout.activity_devicelist);
 
         butRefrescar = findViewById(R.id.butRefrescar);
         lviDeviceList = findViewById(R.id.lviDeviceList);
 
+        butRefrescar.setOnClickListener(this);
+        lviDeviceList.setOnItemClickListener(this);
+    }
+
+    private void verificarHandsetTengaBluetooth() {
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
         if (mBluetoothAdapter == null){
-            Toast.makeText(getApplicationContext(), "Bluetooth no disponible", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Bluetooth no disponible",
+                    Toast.LENGTH_LONG).show();
             finish();
         }else if (!mBluetoothAdapter.isEnabled()){
             Intent turnBTon = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(turnBTon,1);
         }
-
-        butRefrescar.setOnClickListener(this);
-        lviDeviceList.setOnItemClickListener(this);
-
     }
 
-
-    @Override
-    public void onClick(View view) {
+    private void mostrarDispositivosPareados(){
         Set<BluetoothDevice> devicesPaired = mBluetoothAdapter.getBondedDevices();
         List<Device> devices = new ArrayList();
         if (devicesPaired.size() == 0){
@@ -70,12 +98,10 @@ public class DeviceListActivity extends AppCompatActivity implements View.OnClic
         final ArrayAdapter adapter = new ArrayAdapter(this,
                 android.R.layout.simple_list_item_1, devices);
         lviDeviceList.setAdapter(adapter);
-
     }
 
-    @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        Device deviceSelected = (Device)adapterView.getItemAtPosition(i);
+    private void irAPantallaGraficosDelSensor(AdapterView<?> adapterView, int posicion){
+        Device deviceSelected = (Device)adapterView.getItemAtPosition(posicion);
         Log.i("APPSENSORES",  deviceSelected.toString());
         Intent intent = new Intent(DeviceListActivity.this, GraphActivity.class);
         intent.putExtra("DEVICE_ADDRESS", deviceSelected.getAddress());

@@ -1,0 +1,43 @@
+= Taller Conjunto - App Android con Sensores
+
+== Instalación de herramientas (opcional)
+
+Para realizar una aplicación en Android, es necesario tener instalados
+ciertos programas en nuestras computadoras.
+
+El principal programa que se necesita tener instalado se conoce como el
+Andriod Studio y sirve para programar aplicaciones en Android.
+
+
+En este taller no será necesario descargar ninguna aplicación como el Android
+Studio ya que ya se encuentra instalado. En caso quieras volver a hacer la
+experiencia en casa, deberás instalarlo por tu cuenta según la página web
+que te indico a contianuación:
+
+- https://developer.android.com/studio/install.html?hl=es-419
+
+== Abrir herramienta de desarrollo IDE (Android Studio)
+
+Para abrir el IDE Android Studio, simplemente se hare click en el ícono verde
+que se encuentra en el escritorio de la computadora lo que mostrará la siguiente
+pantalla:
+
+image:recursos/android1.png[]
+
+Debe seleccionar la siguiente opción y llenar los datos con lo siguiente:
+
+image:recursos/android2.pmg[]
+
+Si todo estuvo correcto, deberá cargarse una pantalla como la que se les muestra.
+
+image:recursos/android3.png[]
+
+== Ejecutar aplicación MedidorULima
+
+En el paso anterior han cargado en el IDE Android Studio una aplicación
+Android funcional. Ahora vamos a hacer algunos cambios para personalizar
+mejor nuestra aplicación.
+
+=== 1. Modificar el archivo app/manifests/AndroidManifest.xml
+
+=== 2. Ejecutar la aplicación en un equipo Android

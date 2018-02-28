@@ -1,0 +1,59 @@
+= Taller Conjunto - App Android con Sensores
+
+== Programación de Pareo de Dispositivo Bluetooth
+
+=== 1. Configurar elementos de la pantalla
+
+Siempre al inicial una pantalla en Android, se deben configurar los
+elementos gráficos (botones, textos, listados, etc.). Para esto en la
+función _onCreate_ deberá de agregar el siguiente código:
+
+----
+configurarElementosPantalla();
+----
+
+=== 2. Verificar que el handset tenga un receptor Bluetooth
+
+No todos los dispositivos móviles (handsets) vienen con Bluetooth. Existen
+dispositivos (como televisores) que vienen con Android pero que no necesariamente
+tienen un receptor Bluetooh. Además, hay casos que los dispositivos si tienen
+recepción de Bluetooth pero el usuario lo tiene deshabilitado. Por estas situaciones
+es necesario verificar si el bluetootn se encuentra actividad para comenzar con la
+funcionalidad.
+
+Para verificar si tenemos recepción de Bluetooth disponible, agregamos el siguiente
+código en la función _onCreate_ luego de haber configurado los elementos de
+la pantallas:
+
+----
+verificarHandsetTengaBluetooth();
+----
+
+=== 3. Mostrar dispositivos pareados con el handset
+
+Nuestro handset se podrían encontrar  pareados con varios dispositivos (en nuestro
+caso Arduinos) que son emisores de señales Bluetooth. Por lo tanto primero
+debemos mostrar a nuestro usuario los equipos que se encuentran conectados para que
+el pueda elegir con cual trabajar.
+
+Para lograr esto, en ls función _onClick__ agregaremos el siguiente código:
+
+----
+mostrarDispositivosPareados();
+----
+
+Al ejecutar nuestra aplicación y al hacer click en el botón Buscar, veremos que se
+listarán los distintos dispositivos pareados con el handset.
+
+=== 4. Seleccionar un dispositivo pareado para obtener sus datos
+
+De esa lista, tenemos que seleccionar uno con el que vamos a trabajar. Para
+esto deberemos aumentar el siguiente código en la función _onItemClick_:
+
+----
+irAPantallaGraficosDelSensor(adapterView, i);
+----
+
+Esta función le indica al handset que debe trabajar con un dispositivo Bluetooth
+específico y abrir otra pantalla para que se puedan recibir los datos y mostrar
+gráficos.

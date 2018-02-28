@@ -1,4 +1,9 @@
 <resources>
-    <string name="app_name">AppSensor</string>
+    <string name="app_name">AppSensor - Grupo X</string> <!-- Modificar con su numero de grupo -->
+    <string name="grupo">Grupo X</string> <!-- Modificar con su numero de grupo -->
     <string name="buscar">Buscar</string>
+    <string name="instrucciones_pareo">Como primer paso debemos parear nuestra aplicación con un sensor que se encuentra funcionando en nuestro Arduino.\n
+    Para esto deben tener un dispositivo Arduino encendido con la aplicación Sensor funcionando y enviando data y pareado con el dispositivo móvil. En caso
+        de tener problemas con el pareo, puede solicitar ayuda.\nLuego de tenerlo pareado, hacer click en el botón buscar y hacer click en el dispositivo pareado.
+    </string>
 </resources>

@@ -44,6 +44,39 @@ public class GraphActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_graph);
 
+        configurarElementosPantalla();
+
+        iniciarRecepcionDeBluetooth();
+    }
+
+    private void iniciarRecepcionDeBluetooth() {
+        new BTConnection(new OnDeviceDataListener() {
+            @Override
+            public void onDataObtained(byte[] data) {
+                procesarDataObtenida(data);
+            }
+        }).execute();
+    }
+
+    // ===========================================================================================//
+
+
+
+
+
+    private void procesarDataObtenida(byte[] data) {
+        XYZData dataxyz = SensorUtils.parseData(data, mInitTimestamp);
+
+        mSeriesX.appendData(new DataPoint(dataxyz.getTimestamp(),
+                dataxyz.getX() + 7), false, 1000);
+        mSeriesY.appendData(new DataPoint(dataxyz.getTimestamp(),
+                dataxyz.getY()+ 7), false, 1000);
+        mSeriesZ.appendData(new DataPoint(dataxyz.getTimestamp(),
+                dataxyz.getZ() - 84), false, 1000);
+        Log.i("data", dataxyz.getX() + "," + dataxyz.getY() + "," + dataxyz.getZ());
+    }
+
+    private void configurarElementosPantalla() {
         GraphView graphX = findViewById(R.id.graph_x);
         GraphView graphY = findViewById(R.id.graph_y);
         GraphView graphZ = findViewById(R.id.graph_z);
@@ -72,18 +105,6 @@ public class GraphActivity extends AppCompatActivity {
         graphZ.getViewport().setXAxisBoundsManual(true);
         graphZ.getViewport().setMinX(0);
         graphZ.getViewport().setMaxX(1000);
-
-        new BTConnection(new OnDeviceDataListener() {
-            @Override
-            public void onDataObtained(byte[] data) {
-                XYZData dataxyz = SensorUtils.parseData(data, mInitTimestamp);
-
-                mSeriesX.appendData(new DataPoint(dataxyz.getTimestamp(), dataxyz.getX() + 7), false, 1000);
-                mSeriesY.appendData(new DataPoint(dataxyz.getTimestamp(), dataxyz.getY()+ 7), false, 1000);
-                mSeriesZ.appendData(new DataPoint(dataxyz.getTimestamp(), dataxyz.getZ() - 84), false, 1000);
-                Log.i("data", dataxyz.getX() + "," + dataxyz.getY() + "," + dataxyz.getZ());
-            }
-        }).execute();
     }
 
     private class BTConnection extends AsyncTask<Void, Void, Void>{
