@@ -8,6 +8,7 @@ Siempre al inicial una pantalla en Android, se deben configurar los
 elementos gráficos (botones, textos, listados, etc.). Para esto en la
 función _onCreate_ deberá de agregar el siguiente código:
 
+[source,java,linenums]
 ----
 configurarElementosPantalla();
 ----
@@ -25,6 +26,7 @@ Para verificar si tenemos recepción de Bluetooth disponible, agregamos el sigui
 código en la función _onCreate_ luego de haber configurado los elementos de
 la pantallas:
 
+[source,java,linenums]
 ----
 verificarHandsetTengaBluetooth();
 ----
@@ -38,6 +40,7 @@ el pueda elegir con cual trabajar.
 
 Para lograr esto, en ls función _onClick__ agregaremos el siguiente código:
 
+[source,java,linenums]
 ----
 mostrarDispositivosPareados();
 ----
@@ -50,6 +53,7 @@ listarán los distintos dispositivos pareados con el handset.
 De esa lista, tenemos que seleccionar uno con el que vamos a trabajar. Para
 esto deberemos aumentar el siguiente código en la función _onItemClick_:
 
+[source,java,linenums]
 ----
 irAPantallaGraficosDelSensor(adapterView, i);
 ----
