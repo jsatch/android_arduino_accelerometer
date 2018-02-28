@@ -40,7 +40,6 @@ public class GraphActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_graph);
 
         configurarElementosPantalla();
 
@@ -50,15 +49,15 @@ public class GraphActivity extends AppCompatActivity {
     private void iniciarRecepcionDeBluetooth() {
         new BTConnection(new OnDeviceDataListener() {
             @Override
-            public void onDataObtained(byte[] data) {
-                procesarDataObtenida(data);
+            public void onDataObtained(byte[] trama) {
+                procesarDataObtenida(trama);
             }
         }).execute();
     }
 
     // ===========================================================================================//
 
-
+    // NO MODIFICAR A PARTIR DE ACÁ
 
 
 
@@ -75,6 +74,8 @@ public class GraphActivity extends AppCompatActivity {
     }
 
     private void configurarElementosPantalla() {
+        setContentView(R.layout.activity_graph);
+
         GraphView graphX = findViewById(R.id.graph_x);
         GraphView graphY = findViewById(R.id.graph_y);
         GraphView graphZ = findViewById(R.id.graph_z);
@@ -193,6 +194,6 @@ public class GraphActivity extends AppCompatActivity {
     }
 
     public interface OnDeviceDataListener{
-        public void onDataObtained(byte[] data);
+        public void onDataObtained(byte[] trama);
     }
 }

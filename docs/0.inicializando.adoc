@@ -22,15 +22,15 @@ Para abrir el IDE Android Studio, simplemente se hare click en el ícono verde
 que se encuentra en el escritorio de la computadora lo que mostrará la siguiente
 pantalla:
 
-image:recursos/android1.png[]
+image:recursos/t1_imagen1.png[]
 
 Debe seleccionar la siguiente opción y llenar los datos con lo siguiente:
 
-image:recursos/android2.pmg[]
+image:recursos/t1_imagen2.png[]
 
 Si todo estuvo correcto, deberá cargarse una pantalla como la que se les muestra.
 
-image:recursos/android3.png[]
+image:recursos/t1_imagen3.png[]
 
 == Ejecutar aplicación MedidorULima
 
@@ -38,6 +38,34 @@ En el paso anterior han cargado en el IDE Android Studio una aplicación
 Android funcional. Ahora vamos a hacer algunos cambios para personalizar
 mejor nuestra aplicación.
 
-=== 1. Modificar el archivo app/manifests/AndroidManifest.xml
+=== 1. Modificar el archivo res/mvalues/strings.xml
+
+Entrar en el archivo llamado strings.xml y modificarlo para
+poner el número de grupo al que pertenecen.
+
+[source,xml,linenums]
+----
+<resources>
+    <string name="app_name">AppSensor - Grupo X</string> #<1>
+    <string name="grupo">Grupo X</string> #<2>
+    <string name="buscar">Buscar</string>
+    <string name="instrucciones_pareo">Como primer paso debemos parear nuestra aplicación con un sensor que se encuentra funcionando en nuestro Arduino.\n
+    Para esto deben tener un dispositivo Arduino encendido con la aplicación Sensor funcionando y enviando data y pareado con el dispositivo móvil. En caso
+        de tener problemas con el pareo, puede solicitar ayuda.\nLuego de tenerlo pareado, hacer click en el botón buscar y hacer click en el dispositivo pareado.
+    </string>
+</resources>
+----
+<1> Debe de modificar los valores según a su grupo.
+<2> Debe de modificar los valores según su grupo.
 
 === 2. Ejecutar la aplicación en un equipo Android
+
+Para ejecutar la aplicación, deberán de asegurarse que se encuentre
+conectado una handset en la computadora donde va a desarrollar el
+taller.
+
+Para iniciar la aplicación, debe de salirles las siguientes
+pantallas:
+
+image:recursos/t1_imagen4.png[]
+image:recursos/t1_imagen5.png[]

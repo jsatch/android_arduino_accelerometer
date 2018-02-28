@@ -59,6 +59,7 @@ public class DeviceListActivity extends AppCompatActivity implements View.OnClic
 
     // ===========================================================================================//
 
+    // NO MODIFICAR A PARTIR DE ACÁ
 
 
 
